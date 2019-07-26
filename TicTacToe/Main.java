@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.StringBuilder;
 
 public class Main {
 	
@@ -10,12 +11,17 @@ public class Main {
     private static void drawField() {
     	
         String[] gameField = inputHandler();
+        StringBuilder currentRow = new StringBuilder();
         
         System.out.println("---------");
         for (int i = 0; i < 3; i++) {
         	System.out.print("| ");
-        	System.out.print(gameField[i].replaceAll(".(?!$)", "$0 "));
-        	System.out.println(" |");
+        	for (char c: gameField[1].toCharArray()) {
+        		currentRow.append(c).append(" ");
+        	}
+        	System.out.print(currentRow.toString());
+        	System.out.println("|");
+        	currentRow.setLength(0); // clears current row
         }
         System.out.println("---------");
     }
