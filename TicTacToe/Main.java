@@ -16,7 +16,7 @@ public class Main {
         System.out.println("---------");
         for (int i = 0; i < 3; i++) {
         	System.out.print("| ");
-        	for (char c: gameField[1].toCharArray()) {
+        	for (char c: gameField[i].toCharArray()) { // for each char in row adds space 
         		currentRow.append(c).append(" ");
         	}
         	System.out.print(currentRow.toString());
@@ -40,7 +40,7 @@ public class Main {
     	int startPos = 0;
     	int endPos = rowLength;
     	
-        for (int i = 0; i < rowLength; i++) {
+        for (int i = 0; i < rowLength; i++) { // splits string into parts of equal length (currently 3)
         	rows[i] = inputString.substring(startPos, endPos);
         	startPos += rowLength;
         	endPos += rowLength;
